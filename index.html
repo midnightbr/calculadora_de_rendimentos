@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div>
+        <h1>Calculadora de Investimento</h1>
+        <form method="GET" action="./php/calculadora.php">
+            Valor: <input class="value" type="number" step="any" name="value">
+            <fieldset class="time"><legend>Duração por:</legend>
+                <input type="radio" name="time" id="month" value="1" checked>
+                <label for="month">Mês</label>
+                <input type="radio" name="time" id="year" value="2">
+                <label for="year">Ano</label>
+            </fieldset>
+            Duração: <input class="value" type="number" step="any" name="duration">
+            </select>
+            <br>
+            <br>
+            <input type="submit" value="Calcular" class="botao">
+        </form>
+    </div>
+</body>
+</html>
