@@ -1,21 +1,55 @@
+h1 {
+  font-size: 35pt;
+  color: rgb(68, 100, 255);
+  margin: 50px 50px 0px 50px;
+}
+
 div {
-  margin: 50px 400px;
+  margin: 0px 50px;
 }
 
 body {
-  background: url("../img/background.jpg") no-repeat top center fixed;
+  background: url("../img/background_2.jpg") no-repeat top center;
   background-size: cover;
+}
+
+.div1 {
+  margin: 0px 40px;
+  height: 200px;
+  width: 250px;
+  float: left;
+}
+
+.div2 {
+  margin: 0px -30px;
+  height: 200px;
+  width: 250px;
+  display: inline-block;
+}
+
+#text {
+  /* font-weight: bold; */
+  font-family: 'Playfair Display', 'serif';
+  color: rgb(255, 255, 255);
+  font-size: 15pt;
+}
+
+.res {
+  color: rgb(68, 100, 255);
+  font-weight: bold;
+  font-size: 17pt;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-.botao{
+.botao {
   height: auto;
   width: 100px;
-  font-size: 13pt;
-  background-color: aqua;
+  font-size: 15pt;
+  color: white;
+  background-color: rgb(0, 0, 0);
 }
 
 .value {
@@ -25,5 +59,9 @@ a:hover {
 
 .time {
   height: auto;
+  width: 200px;
+}
+
+.juro {
   width: 200px;
 }
