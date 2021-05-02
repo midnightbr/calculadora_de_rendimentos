@@ -5,6 +5,5 @@
  a longo prazo.<br>
  Pensando nisso eu decidi criar essa ferramente web para poder facilitar o calculo<br>
  de investimentos com essa propriedade em particular.<br>
- Por enquanto ela está básica e com a taxa de juros fixa em 7%, no entanto,<br>
- pretento aperfeiçoar ela mais pra frente conforme for tendo tempo, conhecimento<br>
- e imaginação para incrementar a ideia.<br>
+ Hoje ela conta várias possibilidades, como definir o período de duração<br>
+ do investimento, tanto como ano ou mês, como uma variedade de taxas de juros pré-programado.
