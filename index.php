@@ -20,13 +20,13 @@
             <div class="div1">
                 <p id="text">
                     Valor: <input class="value" type="number" step="any" name="value">
-                    <fieldset class="time">
-                        <legend id="text">Duração por:</legend>
-                        <input type="radio" name="time" id="month" value="1" checked>
-                        <label for="month" id="text">Mês</label>
-                        <input type="radio" name="time" id="year" value="2">
-                        <label for="year" id="text">Ano</label>
-                    </fieldset>
+                <fieldset class="time">
+                    <legend id="text">Duração por:</legend>
+                    <input type="radio" name="time" id="month" value="1" checked>
+                    <label for="month" id="text">Mês</label>
+                    <input type="radio" name="time" id="year" value="2">
+                    <label for="year" id="text">Ano</label>
+                </fieldset>
                 </p>
                 <input type="submit" value="Calcular" class="botao">
             </div>
@@ -35,11 +35,11 @@
                 <p id="text">
                     Juros:
                     <?php
-                        echo "<select name='interest'>";
-                        for($j = 0; $j <= 15; $j++) {
-                            echo "<option value=$j>$j%</options>";
-                        }
-                        echo "</select>";
+                    echo "<select name='interest'>";
+                    for ($j = 0; $j <= 15; $j++) {
+                        echo "<option value=$j>$j%</options>";
+                    }
+                    echo "</select>";
                     ?>
                     <br><br>
                     Duração: <input class="value" type="number" step="any" name="duration">
@@ -48,30 +48,31 @@
             <br>
         </form>
         <?php
-            $value = isset($_POST['value']) ? $_POST['value'] : 0;
-            $time = isset($_POST['time']) ? $_POST['time'] : 0;
-            $duration = isset($_POST['duration']) ? $_POST['duration'] : 0;
-            $interest = isset($_POST['interest']) ? $_POST['interest'] : 0;
+        $value = isset($_POST['value']) ? $_POST['value'] : 0;
+        $time = isset($_POST['time']) ? $_POST['time'] : 0;
+        $duration = isset($_POST['duration']) ? $_POST['duration'] : 0;
+        $interest = isset($_POST['interest']) ? $_POST['interest'] : 0;
 
-            echo calculo($time, $value, $duration, $interest);
+        echo calculo($time, $value, $duration, $interest);
 
-            function calculo($time, $value, $duration, $interest) {
-                $total = 0;
-                $interest = $interest / 100;
-                if ($time == 1) {
-                    for ($cont = 1; $cont <= $duration; $cont++) {
-                        $total += $value * (1 + $interest);
-                    }
-                } else if ($time == 2) {
-                    $duration = $duration * 12;
-                    for ($cont = 0; $cont <= $duration; $cont++) {
-                        $total += $value * (1 + 0.07);
-                    }
+        function calculo($time, $value, $duration, $interest)
+        {
+            $total = 0;
+            $interest = $interest / 100;
+            if ($time == 1) {
+                for ($cont = 1; $cont <= $duration; $cont++) {
+                    $total = ($value + $total) * (1 + $interest);
                 }
-                $total = number_format($total, 2);
-                $res = "<br><p class='res'>O retorno total esperado do investimento é de R$$total</p>";
-                return $res;
-            };
+            } else if ($time == 2) {
+                $duration = $duration * 12;
+                for ($cont = 1; $cont <= $duration; $cont++) {
+                    $total = ($value + $total) * (1 + $interest);
+                }
+            }
+            $total = number_format($total, 2);
+            $res = "<br><p class='res'>O retorno total esperado do investimento é de R$$total</p>";
+            return $res;
+        };
         ?>
     </div>
 </body>
